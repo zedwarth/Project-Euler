@@ -10,12 +10,14 @@ def rev(f):
     return r
 
 x = 999 * 999
-y = 111 * 111
+y = 100 * 100
 
 while x >= y:
     if x == rev (x):
-        for z in range (100, 999):
-            if len (str(x/z)) == 3:
-                print ('The answer is ', x, 'With z being ', z) 
-    else:
-        x-= 1
+        for z in range (100, 1000):
+#            print (x, z)
+            if x % z == 0:
+                if len (str(x//z)) == 3:
+                    print ('The answer is ', x, 'With z being ', z) 
+                    x = 0
+    x-= 1
