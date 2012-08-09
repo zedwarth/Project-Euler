@@ -14,10 +14,8 @@ y = 111 * 111
 
 while x >= y:
     if x == rev (x):
-        for z in range (100, 999):
-            if len (str(x/z)) == 3:
-                print ('The answer is ', x, 'With z being ', z) 
-            else:
-                x -= 1
+        z = [x /y for y in range(100, 999)]
+        print ('The answer is ', x, 'With y equaling ', y) 
+        break
     else:
         x-= 1
