@@ -17,7 +17,5 @@ while x >= y:
         for z in range (100, 999):
             if len (str(x/z)) == 3:
                 print ('The answer is ', x, 'With z being ', z) 
-            else:
-                x -= 1
     else:
         x-= 1
