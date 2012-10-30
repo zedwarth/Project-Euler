@@ -23,9 +23,10 @@ def factor (x):
             c+=1
     return (c)
 
-div, n = 0, 0 
+div, n, a = 0, 0, 0 # div is the number of divisors for the current triangle number, which is n 
 while div <500:
-    n += 1
-    a = sum (range (n+1))
+    n += 1 #add 1 to the last triangle number
+    a = a + n
     div = factor(a)
-print (n)
+    print ("n = ",n ," div = ",div)
+print ("n = ",n ," div = ",div)
