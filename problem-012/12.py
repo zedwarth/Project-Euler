@@ -17,16 +17,16 @@
 #           
 #           What is the value of the first triangle number to have over five hundred divisors?#
 def factor (x):
-    c = 2
+    c = 0 #The count of the number of factors
     for y in range (2, int((x/2))): 
         if x % y == 0:
             c+=1
-    return (c)
+    return ((c*2)+2)
 
-div, n, a = 0, 0, 0 # div is the number of divisors for the current triangle number, which is n 
-while div <500:
+div, n = 0, 0 # div is the number of divisors for the current triangle number, which is n 
+while div <=500:
     n += 1 #add 1 to the last triangle number
-    a = a + n
+    a = sum (range (n+1)) 
     div = factor(a)
-    print ("n = ",n ," div = ",div)
-print ("n = ",n ," div = ",div)
+   # print ("n = ",n ," div = ",div)
+print (n)
