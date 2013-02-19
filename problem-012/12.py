@@ -28,5 +28,5 @@ while div <=500:
     n += 1 #add 1 to the last triangle number
     a = sum (range (n+1)) 
     div = factor(a)
-   # print ("n = ",n ," div = ",div)
-print (n)
+#    print ("n = ",n ," div = ",div)
+print (a)
