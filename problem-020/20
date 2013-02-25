@@ -1,0 +1,11 @@
+#!/usr/local/bin/python3
+#Project Euler - Problem - http://projecteuler.net/problem=20
+#zedwarth
+import math
+
+n = math.factorial(100)
+x = 0
+for i in str(n):
+    x += int(i)
+print(x)
+   
