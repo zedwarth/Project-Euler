@@ -1,11 +1,12 @@
 #!/usr/bin/python
 #Project Euler - Probem 21 Amicable numbers - projecteuler.net/problem=21
-n = input('number? ')
+n = int(input('number? '))
 def divisors(n):  #find all the whole divisors of n; less n
     div = []
     for x in range(1,int(n**.5)):
         if n % x == 0:
             div.append(x)
+    print('The first batch:', div)
     for y in div[:]: #loop over a copy of div
         div.append(n/y)
     div.remove(n)
