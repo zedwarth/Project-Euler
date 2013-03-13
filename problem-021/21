@@ -13,3 +13,6 @@ def divisors(n):  #find all the whole divisors of n; less n
     return set(div)
 
 print(sorted(divisors(n)))
+
+for x in range(1, 1001):
+    
