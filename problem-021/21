@@ -18,8 +18,7 @@ for x in range(1, 10001):
 #and then half the answer.
 #    if x in amicable:  #check if x was arleady found so answer isn't doubled
 #        continue #? 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0  GAME OVER! [INSERT COIN]
-    elif sumpair != x and sum(divisors(sumpair)) == x: 
+    if sumpair != x and sum(divisors(sumpair)) == x: 
         amicable.append(x)
         amicable.append(sumpair)
-#print(sum(amicable)) 
-print(set(amicable//2))
+print(sum(amicable)//2)
