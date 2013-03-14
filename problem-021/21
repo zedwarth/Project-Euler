@@ -1,6 +1,5 @@
 #!/usr/bin/python
 #Project Euler - Problem 21 Amicable numbers - projecteuler.net/problem=21
-n = int(input('number? '))
 
 def divisors(n):  #find all the whole divisors of n; less n
     div = []
@@ -12,7 +11,11 @@ def divisors(n):  #find all the whole divisors of n; less n
     div.remove(n)
     return set(div)
 
-print(sorted(divisors(n)))
-
-for x in range(1, 1001):
-    
+amicable = []
+for x in range(1, 10001):
+#    print(sum(divisors(x)))
+    sumpair = sum(divisors(x))
+    if sumpair != x and sum(divisors(sumpair)) == x: 
+        amicable.append(x)
+        amicable.append(sumpair)
+print(sum(amicable))
