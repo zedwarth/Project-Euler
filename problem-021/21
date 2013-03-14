@@ -1,0 +1,18 @@
+#!/usr/bin/python
+#Project Euler - Problem 21 Amicable numbers - projecteuler.net/problem=21
+n = int(input('number? '))
+
+def divisors(n):  #find all the whole divisors of n; less n
+    div = []
+    for x in range(1,int(n**.5+1)): #check modulus from 1-√n
+        if n % x == 0:
+            div.append(x)  #save the first half of divisors in 'div'
+    for y in div[:]: #loop over a copy of div
+        div.append(int(n/y)) #finds the corresponding upper-half
+    div.remove(n)
+    return set(div)
+
+print(sorted(divisors(n)))
+
+for x in range(1, 1001):
+    
