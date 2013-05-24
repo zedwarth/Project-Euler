@@ -9,18 +9,31 @@ def nwords(n):
         nwords(101)
         'onehundredandone'
     '''
-    n = str(n)
-    if len(n) == 1:
-        return (numbers[int(n)])
-    if len(n) == 2:
-        return (numbers[int(n[-2])*10] + numbers[int(n[-1])])
-    if len(n) == 3:
-        if n[-2:] == '00':
-            return (numbers[int(n[-3])] + 'hundred')
+    s = str(n)
+    if if n <= 20 or :  # if n is less than 20; just look it up in the dictionary
+        return numbers[n]
+    if len(s) == 2:                     #2 digit numbers require more logic
+        return two_dec(n)
+    if len(s) == 3:
+        if s[-2:] == '00':
+            return (numbers[int(s[-3])] + 'hundred')
         else:
-            return (numbers[int(n[-3])] + 'hundredand' + numbers[int(n[-2])*10] + numbers[int(n[-1])])
-    if len(n) == 4:
-        return (numbers[int(n[-4])] + 'thousand')
+            return (numbers[int(s[-3])] + 'hundredand' + two_dec(n)
+    if len(s) == 4:
+        return (numbers[int(s[-4])] + 'thousand')
+
+def two_dec(n):
+    '''Subfuction of nwords to handle 2 decible places
+    if n is divisable by 10 it looks n up in the numbers dictionary
+    else it looks up the tens place and ones place seperatly '''
+
+    m = n % 10
+    if m == 0:
+        return numbers[n]
+    else:
+        return numbers[n -m] + numbers[m]
+        
+
 
 total = 0
 
