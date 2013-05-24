@@ -3,6 +3,16 @@
 #
 numbers = { 0:'', 1:'one', 2:'two', 3:'three', 4:'four', 5:'five', 6:'six', 7:'seven', 8:'eight', 9:'nine', 10:'ten', 11:'eleven', 12:'twelve', 13:'thirteen', 14:'fourteen', 15:'fifteen', 16:'sixteen', 17:'seventeen', 18:'eighteen', 19:'nineteen', 20:'twenty', 30:'thirty', 40:'forty', 50:'fifty', 60:'sixty', 70:'seventy', 80:'eighty', 90:'ninety', 100:'hundred'}
 
+def two_dec(n):
+    '''Subfuction of nwords to handle 2 decible places
+    if n is divisable by 10 it looks n up in the numbers dictionary
+    else it looks up the tens place and ones place seperatly '''
+    m = n % 10
+    if m == 0:
+        return numbers[n]
+    else:
+        return numbers[n -m] + numbers[m]
+        
 def nwords(n):
     ''' Given an int n, from 1-1000, the fuction will reference the numbers dictionary and return a string of n written out as words
         example:
@@ -10,7 +20,7 @@ def nwords(n):
         'onehundredandone'
     '''
     s = str(n)
-    if if n <= 20 or :  # if n is less than 20; just look it up in the dictionary
+    if n <= 20:  # if n is less than 20; just look it up in the dictionary
         return numbers[n]
     if len(s) == 2:                     #2 digit numbers require more logic
         return two_dec(n)
@@ -18,21 +28,10 @@ def nwords(n):
         if s[-2:] == '00':
             return (numbers[int(s[-3])] + 'hundred')
         else:
-            return (numbers[int(s[-3])] + 'hundredand' + two_dec(n)
+            return (numbers[int(s[-3])] + 'hundredand' + two_dec(n))
     if len(s) == 4:
         return (numbers[int(s[-4])] + 'thousand')
 
-def two_dec(n):
-    '''Subfuction of nwords to handle 2 decible places
-    if n is divisable by 10 it looks n up in the numbers dictionary
-    else it looks up the tens place and ones place seperatly '''
-
-    m = n % 10
-    if m == 0:
-        return numbers[n]
-    else:
-        return numbers[n -m] + numbers[m]
-        
 
 
 total = 0
