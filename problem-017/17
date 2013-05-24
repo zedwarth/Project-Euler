@@ -8,7 +8,7 @@ def two_dec(n):
     if n is divisable by 10 it looks n up in the numbers dictionary
     else it looks up the tens place and ones place seperatly '''
     m = n % 10
-    if m == 0:
+    if m == 0 or n < 20:
         return numbers[n]
     else:
         return numbers[n -m] + numbers[m]
@@ -20,16 +20,15 @@ def nwords(n):
         'onehundredandone'
     '''
     s = str(n)
-    if n <= 20:  # if n is less than 20; just look it up in the dictionary
-        return numbers[n]
-    if len(s) == 2:                     #2 digit numbers require more logic
+    if len(s) <= 2:                     #2 digit numbers require more logic
         return two_dec(n)
-    if len(s) == 3:
-        if s[-2:] == '00':
+    elif len(s) == 3:
+        m = n % 100
+        if m == 0:
             return (numbers[int(s[-3])] + 'hundred')
         else:
-            return (numbers[int(s[-3])] + 'hundredand' + two_dec(n))
-    if len(s) == 4:
+            return (numbers[int(s[-3])] + 'hundredand' + two_dec(m))
+    else:
         return (numbers[int(s[-4])] + 'thousand')
 
 
