@@ -1,22 +1,7 @@
 #!/usr/bin/env python3
 #Project Euler - Problem 67 - http://projecteuler.net
 
-def merge_tier(blist, alist):
-    '''For each apex in alist, merge_tier picks the largest item in blist and sums the two, returning a new list.
+with open("names.txt") as f:
+    for line in f:
+        a = list(eval(line))
 
-    example:
-    alist  = [90, 70, 80]
-    blist  = [66, 88, 20, 18]
-    return = [178, 158, 100] '''
-    return [a + b for a, b in zip(alist, [max(blist[i],blist[i+1]) for i in range(len(alist))])]
-
-f = open('triangle.txt')
-
-pyrimid = [[int(i) for i in line.split()] for line in f]
-
-f.close()
-
-while len(pyrimid) != 1:
-    pyrimid.append(merge_tier(pyrimid.pop(), pyrimid.pop()))
-
-print(pyrimid)
