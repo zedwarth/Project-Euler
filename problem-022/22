@@ -2,13 +2,22 @@
 #Project Euler - Problem 67 - http://projecteuler.net
 
 alpha = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+num  = [i for i in range(1,27)]
+score = {a:b for a, b in zip(alpha, num)}
+answer = 0
+
+def letterscore(name):
+    '''Totals the numerical vaule of each letter in name.'''
+    total = 0
+    for c in name:
+        total +=  score[c]
+    return total
 
 with open("names.txt") as f:
     for line in f:
-        names = list(eval(line))
+        names = sorted(list(eval(line)))
 
-names.sort()
+for name in names:
+    answer += letterscore(name) * (names.index(name) + 1)
 
-for i in range(len(names)):
-
-
+print('The answer is',  answer)
