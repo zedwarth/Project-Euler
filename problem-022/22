@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-#Project Euler - Problem 67 - http://projecteuler.net
+#Project Euler - Problem 22 - http://projecteuler.net
 
 alpha = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 num  = [i for i in range(1,27)]
