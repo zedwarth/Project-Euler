@@ -1,11 +1,19 @@
 #!/usr/bin/env python3
 #Project Euler - Problem 23 - http://projecteuler.net
-def prop_div(n):
+def proper_divisor(n):
     '''Returns proper divisors of n as a set.'''
     div = {i for i in range(2, int(n**.5+1)) if n % i == 0}
     div.update({n//i for i in div}, {1})
     div.update
     return div
 
+def abundance_check(n):
+    '''Returns boolean of n being an abundant number.'''
+    if sum(proper_divisor(n)) > n:
+        return True
+    else:
+        return False
 
+abundants = {n for n in range(12, 28124) if abundance_check(n)}
+sum_of_abundants
 
